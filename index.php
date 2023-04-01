@@ -67,9 +67,10 @@ hello, <?php echo $user_data['user_name']; ?>
 <h1 align="center";>M-PAY</h1>
 <div id="box_pay">
 		
-		<form method="post">
+		<form action="stkpay.php" method="post">
 			<div style="font-size: 15px;margin: 10px; color: while;">M-PESA</div>
-			Amount:<input id="text_pay" type="text_pay" name="user_name"><br><br>
+			Amount:<input id="text_pay" type="amount" name="user_name" required><br><br>
+			Phone Number:<input id="text_pay" type="number" name="user_name" required><br><br>
 			<input id="button_pay" type="submit" value="M-PAY"><br><br>
 			
 			<a href="otherpayment.php">Use other payment methods?</a>
