@@ -23,9 +23,9 @@ if(isset($_POST['submit'])){
     for developer/test accounts, this money will be reversed automatically by midnight.
   */
   
-   $PartyA = $_POST['phone']; // This is your phone number, 
-  $AccountReference = '2255';
-  $TransactionDesc = 'Test Payment';
+   $PartyA = $_POST['///////junk data/////////']; // This is your phone number, 
+  $AccountReference = '///////junk data/////////';
+  $TransactionDesc = '///////junk data/////////';
   $Amount = $_POST['amount'];
  
   # Get the timestamp, format YYYYmmddhms -> 20181004151020
