@@ -1,10 +1,10 @@
-# web_payment_module
-Introduction:
+## M-PAY
+#Introduction:
 The payment module is an essential component of any e-commerce website. It allows customers to make payments for goods or services and provides a secure
  and reliable method for processing transactions. This document provides an overview of the basic payment module, including its features, functionalities,
  and technical specifications.
 
-Features:
+#Features:
 The basic payment module supports the following features:
 
 Credit card payments: Customers can make payments using major credit cards such as Visa, Mastercard, and American Express.
@@ -21,12 +21,14 @@ Refund processing: The module includes a refund processing feature that allows m
 Technical specifications:
 The basic payment module is built using the following technical specifications:
 
-Programming language: The module is built using the Python programming language.
+#Programming language: The module is built using the Python programming language.
 Framework: The module is built using the Django web framework.
 Database: The module stores transaction data in a PostgreSQL database.
 Payment gateway integration: The module integrates with the Stripe payment gateway service to securely process payments and manage customer data.
 Security: The module uses HTTPS encryption and follows industry-standard security practices to protect customer data and prevent fraud.
 Conclusion:
 The basic payment module is a reliable and secure solution for processing payments on e-commerce websites. Its features and functionalities provide customers with a convenient payment experience while ensuring that merchants can manage transactions efficiently and securely. The module's technical specifications ensure that it is built using modern technologies and follows industry-standard security practices.
+
+index.php
 
 
