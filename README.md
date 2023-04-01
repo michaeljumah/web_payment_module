@@ -29,4 +29,6 @@ Security: The module uses HTTPS encryption and follows industry-standard securit
 Conclusion:
 The basic payment module is a reliable and secure solution for processing payments on e-commerce websites. Its features and functionalities provide customers with a convenient payment experience while ensuring that merchants can manage transactions efficiently and securely. The module's technical specifications ensure that it is built using modern technologies and follows industry-standard security practices.
 
+index.php
+
 
