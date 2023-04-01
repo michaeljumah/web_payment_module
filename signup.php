@@ -9,11 +9,11 @@ session_start();
 		$user_name = $_POST['user_name'];
 		$password = $_POST['password'];
 		
-		if(!empty($user_name) && !empty($password) && !is_numeric(user_name))
+		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
 		{
 			//save to database
 			$user_id = random_num(20);
-			$query = "insert into users (user_id,username,password) value ('$user_id','$username','$password')";
+			$query = "insert into users (user_id,user_name,password) value ('$user_id','$user_name','$password')";
 			
 			mysqli_query($con,$query);
 			
@@ -62,7 +62,7 @@ session_start();
 		
 		<form method="post">
 			<div style="font-size: 20px;margin: 10px; color: while;">Signup</div>
-			username:<input id="text" type="text" name="user-name"><br><br>
+			username:<input id="text" type="text" name="user_name"><br><br>
 			password:<input id="text" type="password" name="password"><br><br>
 			<input id="button" type="submit" value="signup"><br><br>
 			
