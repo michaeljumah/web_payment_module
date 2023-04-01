@@ -59,23 +59,30 @@ session_start();
 		padding: 10px;
 		width: 100px;
 		color:white;
-		background-color: lightblue;
+		background-color: green;
 		border: none;
+		
 		}
 		
 	#box{
-		background-color: green;
+		background-color: #eaedf4;
 		margin: auto;
 		width: 300px;
 		padding: 20px;
+	}
+	.mpesa {
+        background-color: #eaedf4 !important;
+		padding: 15px;
+		width: 70px;
+		margin: auto;
 	}
 	</style>
 	<div id="box">
 		
 		<form method="post">
-			<div style="font-size: 20px;margin: 10px; color: while;">Login</div>
-			username:<input id="text" type="text" name="user_name"><br><br>
-			password:<input id="text" type="password" name="password"><br><br>
+			<div class="mpesa"><span><b><h2> Login </h2></b></span></div>
+			username:<input id="text" type="text" name="user_name" placeholder="Username" required><br><br>
+			password:<input id="text" type="password" name="password" placeholder="Password" required><br><br>
 			<input id="button" type="submit" value="Login"><br><br>
 			
 			<a href="signup.php">Click to Signup</a>

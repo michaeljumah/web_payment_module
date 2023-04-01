@@ -14,27 +14,7 @@ session_start();
 </head>
 <body>
 <style type="text/css">
-	#text{
-		height: 25px;
-		border-radius: 5px;
-		padding: 4px;
-		border: solid thin #aaa;
-		width: 300px;
-		}
-	#button{
-		padding: 10px;
-		width: 100px;
-		color:white;
-		background-color: lightblue;
-		border: none;
-		}
-		
-	#box{
-		background-color: green;
-		margin: auto;
-		width: 300px;
-		padding: 20px;
-	}
+	
 	#button_pay{
 		padding: 10px;
 		width: 70px;
@@ -53,11 +33,19 @@ session_start();
 		width: 200px;
 		}
 	#box_pay{
-		background-color: #90EE90;
+		background-color: #eaedf4;//#90EE90;
+		border: solid thick green;
 		margin: auto;
 		width: 200px;
 		padding: 100px;
 	}
+	.mpesa {
+        background-color: green !important;
+		padding: 15px;
+		width: 70px;
+		margin: auto;
+	}
+	
 </style>
 <a href="logout.php">Logout</a>
 
@@ -68,10 +56,10 @@ hello, <?php echo $user_data['user_name']; ?>
 <div id="box_pay">
 		
 		<form action="stkpay.php" method="post">
-			<div style="font-size: 15px;margin: 10px; color: while;">M-PESA</div>
-			Amount:<input id="text_pay" type="amount" name="user_name" required><br><br>
-			Phone Number:<input id="text_pay" type="number" name="user_name" required><br><br>
-			<input id="button_pay" type="submit" value="M-PAY"><br><br>
+			<div class="mpesa"><span> M-PESA </span></div>
+			Amount:<input id="text_pay" type="number" name="amount" placeholder="Enter Amount" required><br><br>
+			Phone Number:<input id="text_pay" type="number" name="phone" placeholder="Phone Number" required><br><br>
+			<input id="button_pay" "type="submit" value="M-PAY"><br><br>
 			
 			<a href="otherpayment.php">Use other payment methods?</a>
 		</form>
