@@ -55,12 +55,11 @@ hello, <?php echo $user_data['user_name']; ?>
 <h1 align="center";>M-PAY</h1>
 <div id="box_pay">
 		
-		<form action="stkpay.php" method="post">
+		<form action="./stkpay.php" method="POST">
 			<img src="images/M-PESA_LOGO.png" align:"center" class="mr-3" height="75" /><br><br>
 			Amount:<input id="text_pay" type="number" name="amount" placeholder="Enter Amount" required><br><br>
 			Phone Number:<input id="text_pay" type="number" name="phone" placeholder="Phone Number" required><br><br>
-			<input id="button_pay" type="submit" value="PAY"><br><br>
-			
+			<button id="button_pay" type="submit" name="submit" value="submit">PAY</button><br><br>
 			<a href="otherpayment.php">Use other payment methods?</a>
 		</form>
 	</div>
