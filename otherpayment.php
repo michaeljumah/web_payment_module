@@ -89,7 +89,7 @@
                 </div>
              
                 <div class="col-12">
-                  <button type="submit" class="btn btn-success" name="submit" value="submit">PAY</button><br><br>
+                  <button type="submit" class="btn btn-danger" name="submit" value="submit">PAY</button><br><br>
 				  <a href="index.php">Use M-PESA instead?</a>
                 </div>
               </form>
