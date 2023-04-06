@@ -1,5 +1,5 @@
 <?php
- 		header("Content-Type: application/php");//replaced json with php
+ 		header("Content-Type: application/json");
 
      $response = '{
          "ResultCode": 0, 

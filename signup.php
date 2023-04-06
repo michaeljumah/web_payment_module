@@ -11,6 +11,7 @@ session_start();
 		
 		if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
 		{
+		
 			//save to database
 			$user_id = random_num(20);
 			$query = "insert into users (user_id,user_name,password) value ('$user_id','$user_name','$password')";
@@ -19,7 +20,7 @@ session_start();
 			
 			header("location: login.php");
 			die;
-		
+			
 		}else
 		{
 			echo "please enter some valid information";
@@ -70,6 +71,7 @@ session_start();
 			<div class="mpesa"><span><b><h2> Signup </h2></b></span></div>
 			username:<input id="text" type="text" name="user_name" placeholder="Username" required><br><br>
 			password:<input id="text" type="password" name="password" placeholder="Password" required><br><br>
+			
 			<input id="button" type="submit" value="signup"><br><br>
 			
 			<a href="login.php">Click to Login</a>

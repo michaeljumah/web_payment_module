@@ -5,13 +5,13 @@ if(isset($_POST['submit'])){
   date_default_timezone_set('Africa/Nairobi');
 
   # access token
-  $consumerKey = '///////junk data/////////'; //Fill with your app Consumer Key
-  $consumerSecret = '///////junk data/////////'; // Fill with your app Secret
+  $consumerKey = 'v7QZ7uwLZraw1RFiLtVWDUGiIvzLKqSV'; //Fill with your app Consumer Key
+  $consumerSecret = ' lT9FjPTj9wJoUAU4'; // Fill with your app Secret
 
   # define the variales
   # provide the following details, this part is found on your test credentials on the developer account
-  $BusinessShortCode = '///////junk data/////////';
-  $Passkey = '///////junk data/////////';  
+  $BusinessShortCode = '174379';
+  $Passkey = 'bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919';  
   
   /*
     This are your info, for
@@ -23,9 +23,9 @@ if(isset($_POST['submit'])){
     for developer/test accounts, this money will be reversed automatically by midnight.
   */
   
-   $PartyA = $_POST['///////junk data/////////']; // This is your phone number, 
-  $AccountReference = '///////junk data/////////';
-  $TransactionDesc = '///////junk data/////////';
+   $PartyA = $_POST['phone']; // This is your phone number, 
+  $AccountReference = 'm-payed';
+  $TransactionDesc = 'Pay Order';
   $Amount = $_POST['amount'];
  
   # Get the timestamp, format YYYYmmddhms -> 20181004151020
@@ -42,7 +42,7 @@ if(isset($_POST['submit'])){
   $initiate_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest';
 
   # callback url
-  $CallBackURL = 'C:\xampp\htdocs\web_payment_module\index.php';  
+  $CallBackURL = 'https://mypaysite.000webhostapp.com/';  
 
   $curl = curl_init($access_token_url);
   curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
