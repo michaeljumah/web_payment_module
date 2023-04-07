@@ -38,7 +38,7 @@
 		die("<h1>Connection failed:</h1>" . $conn->connect_error);		
 	 } else {
 		 
-		 $insert = $conn->query("INSERT INTO dataResponce(CheckoutRequestID,ResultCode,amount,MpesaReceiptNumber,PhoneNumber)");
+		 $insert = $conn->query("INSERT INTO tinypesa(CheckoutRequestID,ResultCode,amount,MpesaReceiptNumber,PhoneNumber) VALUES ('$CheckoutRequestID','$Resultcode','$Amount','$MpesaReceiptNumber','$PhoneNumber')");
 		 $conn = null;
 	    }
 	    }
