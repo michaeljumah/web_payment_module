@@ -42,34 +42,35 @@ session_start();
 	.mpesa {
         background-color: green !important;
 		padding: 15px;
-		width: 70px;
+		width: 50px;
 		margin: auto;
 	}
 	
 </style>
-<a href="logout.php">Logout</a>
-
 
 <br>
-hello, <?php echo $user_data['user_name']; ?>
-<h1 align="center";>M-PAY</h1>
+<i><b>Hello, <?php echo $user_data['user_name']; ?></b></i>
+<div class="mpesa"><span>M-PAY</span></div>
 <div id="box_pay">
-		
+
 		<form action="./stkpay.php" method="POST" style="
-    padding-top: 0px;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-    border-bottom-width: 20px;
-    width: 200px;
-    height: 200px;
-    padding-right: 20px;
-    border-right-width: 10px">
+			padding-top: 0px;
+			padding-bottom: 10px;
+			margin-bottom: 30px;
+			border-bottom-width: 20px;
+			width: 200px;
+			height: 200px;
+			padding-right: 20px;
+			border-right-width: 10px">
 			<img src="images/M-PESA_LOGO.png" align:"center" class="mr-3" height="40" /><br><br>
 			Amount:<input id="text_pay" type="number" name="amount" placeholder="Enter Amount" required><br><br>
 			Phone Number:<input id="text_pay" type="number" name="phone" placeholder="Phone Number" required><br><br>
 			<button id="button_pay" type="submit" name="submit" value="submit">PAY</button><br><br>
-			<a href="otherpayment.php">Use other payment methods?</a>
+			<a href="otherpayment.php">Use other payment methods?</a><br><br>
+			
 		</form>
 	</div>
+<a href="record.php" ><button class="btn btn-link btn-floating mx-1">RECORDS</button></a><br><br>
+<button><a href="logout.php"><b><i>Logout</i></b></a></button>
 </body>
 </html>

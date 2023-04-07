@@ -1,20 +1,21 @@
 <?php
 // Connect to the MySQL database
 $host = 'localhost';
-$user = 'username';
-$password = 'password';
-$database = 'database_name';
+$user = 'root';
+$password = '';
+$database = 'login_mpay_db';
 
 $conn = new mysqli($host, $user, $password, $database);
 
 // Select the transaction information from the database
-$sql = "SELECT * FROM transaction_info";
+$sql = "SELECT * FROM dataResponce";
 
 $result = $conn->query($sql);
 
 // Output the transaction information in an HTML table
 if ($result->num_rows > 0) {
-    echo "<table><tr>
+    echo "<table>
+	<tr>
 	<th>Merchant Request ID</th>
 	<th>Checkout Request ID</th>
 	<th>Response Code</th>
