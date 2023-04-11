@@ -54,7 +54,7 @@ session_start();
 <div id="box_pay">
 
 		<form action="./stkpay.php" method="POST" style="
-			padding-top: 0px;
+			padding-top: 0px
 			padding-bottom: 10px;
 			margin-bottom: 30px;
 			border-bottom-width: 20px;

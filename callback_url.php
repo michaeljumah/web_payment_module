@@ -22,7 +22,7 @@
 	 $mpesaResponse = file_get_contents('M_PESAConfirmationResponse.json');
 	 $callbackContent = json_decode($mpesaResponse);
 	 
-	 $Ressultcode = $callbackContent->Body->stkCallback->ResultCode;
+	 $Resultcode = $callbackContent->Body->stkCallback->ResultCode;
 	 $CheckoutRequestID = $callbackContent->stkCallback->CheckoutRequestID;
 	 $Amount = $callbackContent->Body->stkCallback->Item[0]->Value;
 	 $MpesaReceiptNumber = $callbackContent->Body->stkCallback->CallbackMetadata->Item[1]->Value;
@@ -37,11 +37,16 @@
 	 if ($conn->connect_error){
 		die("<h1>Connection failed:</h1>" . $conn->connect_error);		
 	 } else {
-		 
-		 $insert = $conn->query("INSERT INTO tinypesa(CheckoutRequestID,ResultCode,amount,MpesaReceiptNumber,PhoneNumber) VALUES ('$CheckoutRequestID','$Resultcode','$Amount','$MpesaReceiptNumber','$PhoneNumber')");
-		 $conn = null;
-	    }
-	    }
+		 $insert = $conn->query("INSERT INTO dataresponce(CheckoutRequestID,ResultCode,amount,MpesaReceiptNumber,PhoneNumber)
+		 VALUES ('$CheckoutRequestID','$Resultcode','$Amount','$MpesaReceiptNumber','$PhoneNumber')");
+		//unset($mpesaResponse);
+          if($insert){
+            unset($logFile);
+          }
+
+          $conn = null;
+      }
+  }
 	 
 	 
      echo $response;

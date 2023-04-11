@@ -8,7 +8,7 @@ $database = 'login_mpay_db';
 $conn = new mysqli($host, $user, $password, $database);
 
 // Select the transaction information from the database
-$sql = "SELECT * FROM dataResponce";
+$sql = "SELECT * FROM dataresponce";
 
 $result = $conn->query($sql);
 
