@@ -29,7 +29,7 @@ session_start();
 					}
 				}
 			}
-			echo "invalid username or password";
+			echo "invalid user name or password";
 		}else
 		{
 			echo "invalid username or password";

@@ -1,4 +1,8 @@
 <?php
+session_start();
+	include("connection.php");
+	
+	
  		header("Content-Type: application/json");
 
      $response = '{
@@ -20,7 +24,7 @@
 	 
 	 //processing the Mpesa json response
 	 $mpesaResponse = file_get_contents('M_PESAConfirmationResponse.json');
-	 $callbackContent = json_decode($mpesaResponse);
+	 $callbackContent = json_decode($mpesaResponse, true);
 	 
 	 $Resultcode = $callbackContent->Body->stkCallback->ResultCode;
 	 $CheckoutRequestID = $callbackContent->stkCallback->CheckoutRequestID;
@@ -31,22 +35,24 @@
 	 if (ResultCode == 0){
 		 
 	//connect DataBase
-     $conn = mysqli_connect("localhost","root","","login_mpay_db");
+     $con = mysqli_connect("localhost","root","","login_mpay_db");
 	 
 	 //check connection
-	 if ($conn->connect_error){
-		die("<h1>Connection failed:</h1>" . $conn->connect_error);		
+	 if ($con->connect_error){
+		die("<h1>Connection failed:</h1>" . $con->connect_error);		
 	 } else {
-		 $insert = $conn->query("INSERT INTO dataresponce(CheckoutRequestID,ResultCode,amount,MpesaReceiptNumber,PhoneNumber)
-		 VALUES ('$CheckoutRequestID','$Resultcode','$Amount','$MpesaReceiptNumber','$PhoneNumber')");
-		//unset($mpesaResponse);
-          if($insert){
-            unset($logFile);
-          }
-
-          $conn = null;
-      }
-  }
-	 
-	 
-     echo $response;
+		 $sql = "INSERT INTO 'dataresponce' (CheckoutRequestID, Resultcode, Amount, MpesaReceiptNumber, PhoneNumber)
+		 VALUES ('".$CheckoutRequestID."','".$Resultcode."','".$Amount."','".$MpesaReceiptNumber."','".$PhoneNumber."')";
+		 
+		 if ($con->query($sql) === TRUE)
+		 {
+			 echo "Record inserted successfully";
+			 }
+			 else {
+				 echo "Error inserting record: " . $con->error;
+				 }
+// Close the database connection
+$con->close();
+	    } 
+        }
+echo $response;
