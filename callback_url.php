@@ -32,7 +32,7 @@ session_start();
 	 $MpesaReceiptNumber = $callbackContent->Body->stkCallback->CallbackMetadata->Item[1]->Value;
 	 $PhoneNumber = $callbackContent->Body->stkCallback->CallbackMetadata->Item[4]->Value;
      $formatedPhone = str_replace("254", "0" , $PhoneNumber);
-	 if (ResultCode == 0){
+	 if ($ResultCode == 0){
 		 
 	//connect DataBase
      $con = mysqli_connect("localhost","root","","login_mpay_db");
