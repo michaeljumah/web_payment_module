@@ -42,7 +42,7 @@ session_start();
 		die("<h1>Connection failed:</h1>" . $con->connect_error);		
 	 } else {
 		 $sql = "INSERT INTO 'dataresponce' (CheckoutRequestID, Resultcode, Amount, MpesaReceiptNumber, PhoneNumber)
-		 VALUES ('".$CheckoutRequestID."','".$Resultcode."','".$Amount."','".$MpesaReceiptNumber."','".$PhoneNumber."')";
+		 VALUES ('$CheckoutRequestID','$Resultcode','$Amount','$MpesaReceiptNumber','$PhoneNumber')";
 		 
 		 if ($con->query($sql) === TRUE)
 		 {
